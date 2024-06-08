@@ -27,11 +27,19 @@
 .result-card{
   width: 30%;
   padding-top: 15px;
+  gap: 30px;
 }
 @media screen and (max-width:1000px) {
   .result-card{
     width: 70%;
   }
+}
+.result-text-card{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 .btn-container{
   display: flex;
@@ -47,6 +55,7 @@
   color: #E2E4F3;
   border: 2px solid transparent;
   font-size: 18px;
+  cursor: pointer;
 }
 .q-btn:hover {
   background-image: linear-gradient(#E65895, #BC6BE8);
@@ -119,4 +128,7 @@ p{
   font-family: "Roboto";
   font-size: 25px;
 
+}
+.congrats-img{
+  width: 80%;
 }

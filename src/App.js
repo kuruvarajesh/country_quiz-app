@@ -11,6 +11,7 @@ function App() {
   const [allCountries, setAllCountries] = useState([])
   const [activeQuestion, setActiveQuestion] = useState(0)
   const [completed, setCompleted] = useState([])
+  const [correct, setCorrect] = useState(0)
   const [clickedVal, setClickedValue] = useState("")
 
   useEffect(() => {
@@ -19,9 +20,11 @@ function App() {
   }, [])
 
   const getCountriesData = async () => {
-    const api = await fetch('https://restcountries.com/v3.1/all')
-    const apiData = await api.json()
-
+    let apiData = allCountries
+    if(allCountries?.length===0){
+      const api = await fetch('https://restcountries.com/v3.1/all')
+      apiData = await api.json()
+    }
     console.log("Data", apiData)
     const countriesList = []
     const optionsList = {}
@@ -34,7 +37,7 @@ function App() {
         const countriesN = Math.floor(Math.random() * (249 - 0 + 1) + 0);
         opt.push(apiData[countriesN]?.name?.common)
       }
-      optionsList[i] = opt
+      optionsList[i] = opt.sort()
 
 
 
@@ -50,17 +53,22 @@ function App() {
     setActiveQuestion(value - 1)
     // if (!completed.includes(value))
       // setCompleted([...completed, value - 1])
-    console.log("Correct Answer")
-
     setClickedValue("")
   }
   const handleClick = (val) => {
     console.log()
     if (countries[activeQuestion]?.name?.common === val) {
       console.log("Correct Answer")
+      setCorrect(correct+1)
     }
     setClickedValue(val)
-    setCompleted([...completed, activeQuestion])
+    if (completed.length >=9){
+      const timer = setTimeout(() => {
+        setCompleted([...completed, activeQuestion])
+      },2000)
+      // clearTimeout(timer)
+    }
+    else setCompleted([...completed, activeQuestion])
   }
 
   const showAllOptions = (opt) => {
@@ -76,13 +84,15 @@ function App() {
   }
 
   const handlePlayAgain = ()=>{
+    getCountriesData()
     setCompleted([])
     setActiveQuestion(0)
     setClickedValue("")
+    setCorrect(0)
   }
   return (
     <div className="App">
-      {completed.length<1?
+      {completed.length<10?
       <div className='q-card'>
         <h1>Country Quiz</h1>
         <div className='btn-container'>
@@ -102,8 +112,10 @@ function App() {
       </div>:
       <div className={ 'q-card result-card'}>
         <img src={congrats} alt="congrats" className='congrats-img' />
+        <div className='result-text-card'>
         <h2 className='result-text'>Congrats! You Completed the quiz.</h2>
-        <p>You answer 5/10 correctly</p>
+        <p>You answer {correct}/10 correctly</p>
+        </div>
         <button type="button" className='correct opt-btn' onClick={handlePlayAgain}>Play again</button>
       </div>
       }
