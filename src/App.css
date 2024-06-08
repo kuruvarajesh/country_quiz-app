@@ -1,38 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;400;500&display=swap');
+
 .App {
   text-align: center;
+  background-image: url("file:///home/rajesh/.cache/.fr-nlIulH/dccl--frontend-country-quiz/bg.jpg");
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.q-card{
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 55%;
+  /* justify-content: center; */
   align-items: center;
+  width: 60%;
+  background-color: #343964 ;
+  border-radius: 15px;
+  font-family: 'Sora', sans-serif;
+  padding: 10px 15px ;
+}
+.result-card{
+  width: 30%;
+  padding-top: 15px;
+  gap: 30px;
+}
+@media screen and (max-width:1000px) {
+  .result-card{
+    width: 70%;
+  }
+}
+.result-text-card{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.btn-container{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.q-btn{
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: #393F6E;
+  color: #E2E4F3;
+  border: 2px solid transparent;
+  font-size: 18px;
+  cursor: pointer;
 }
+.q-btn:hover {
+  background-image: linear-gradient(#E65895, #BC6BE8);
+}
+.active-button{
+  background-image: linear-gradient(#E65895, #BC6BE8);
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+h1{
+  color:#8B8EAB
+}
+.q-opt-card{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  margin: 15px 0px;
+  gap: 20px;
+}
+h2{
+  color: #E2E4F3;
+  font-weight: bold;
+  text-align: center;
+  width: 60%;
+  font-family: 'Sora', sans-serif;
+  
+}
+.opt-card{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.opt-btn{
+  border-radius: 10px;
+  width: 280px;
+  height: 70px;
+  background-color: #393F6E;
+  color: #E2E4F3;
+  border: 2px solid transparent;
+  font-size: 18px;
+  font-family: 'Sora', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+.opt-btn:hover {
+  background-image: linear-gradient(#E65895, #BC6BE8);
+  cursor: pointer;
+}
+.correct{
+  background-image: linear-gradient(#E65895, #BC6BE8);
+}
+.result-text{
+    color: #E2E4F3;
+    font-weight: bold;
+    text-align: center;
+    width: 65%;
+    font-family: 'Sora', sans-serif;
+}
+p{
+  color: #E2E4F3;
+  font-weight: bold;
+  text-align: center;
+  width: 65%;
+  font-family: "Roboto";
+  font-size: 25px;
+
+}
+.congrats-img{
+  width: 80%;
 }
