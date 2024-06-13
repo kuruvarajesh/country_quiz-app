@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/kuruvarajesh/country_quiz-app/static/css/main.a8983269.css",
+    "main.js": "/kuruvarajesh/country_quiz-app/static/js/main.bb58a1e6.js",
+    "static/js/453.8dde278c.chunk.js": "/kuruvarajesh/country_quiz-app/static/js/453.8dde278c.chunk.js",
+    "static/media/congrats.svg": "/kuruvarajesh/country_quiz-app/static/media/congrats.ecb2f7b516becfa55d75de56834947ec.svg",
+    "static/media/bg.jpg": "/kuruvarajesh/country_quiz-app/static/media/bg.b56759cfcd11ec8f1eab.jpg",
+    "static/media/success.svg": "/kuruvarajesh/country_quiz-app/static/media/success.4d34fe7f6d86eedaf2f67b1538f5c155.svg",
+    "static/media/error.svg": "/kuruvarajesh/country_quiz-app/static/media/error.01c4717bbae22cb0af89ec2f11fe3fc5.svg",
+    "index.html": "/kuruvarajesh/country_quiz-app/index.html",
+    "main.a8983269.css.map": "/kuruvarajesh/country_quiz-app/static/css/main.a8983269.css.map",
+    "main.bb58a1e6.js.map": "/kuruvarajesh/country_quiz-app/static/js/main.bb58a1e6.js.map",
+    "453.8dde278c.chunk.js.map": "/kuruvarajesh/country_quiz-app/static/js/453.8dde278c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8983269.css",
+    "static/js/main.bb58a1e6.js"
+  ]
+}
