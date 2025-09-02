@@ -14,10 +14,9 @@ function App() {
   const [correct, setCorrect] = useState(0)
   const [clickedVal, setClickedValue] = useState("")
 
-  // eslint-disable-next-line
   useEffect(() => {
     getCountriesData()
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   const getCountriesData = async () => {
