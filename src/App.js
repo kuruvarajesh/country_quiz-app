@@ -14,10 +14,11 @@ function App() {
   const [correct, setCorrect] = useState(0)
   const [clickedVal, setClickedValue] = useState("")
 
+  // eslint-disable-next-line
   useEffect(() => {
     getCountriesData()
 
-  }, [])
+  },[])
 
   const getCountriesData = async () => {
     let apiData = allCountries
@@ -63,7 +64,7 @@ function App() {
     }
     setClickedValue(val)
     if (completed.length >=9){
-      const timer = setTimeout(() => {
+      setTimeout(() => {
         setCompleted([...completed, activeQuestion])
       },2000)
       // clearTimeout(timer)
