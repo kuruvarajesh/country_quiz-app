@@ -22,7 +22,7 @@ function App() {
   const getCountriesData = async () => {
     let apiData = allCountries
     if(allCountries?.length===0){
-      const api = await fetch('https://restcountries.com/v3.1/all')
+      const api = await fetch('https://restcountries.com/v3.1/all?fields=name,capital')
       apiData = await api.json()
     }
     console.log("Data", apiData)
